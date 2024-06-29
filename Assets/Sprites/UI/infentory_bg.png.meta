@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b8aab75dac2d5a4fbb3a1e7c5be2ef7
+guid: 1aed2bf9e6fe60e40ac2126ece032fc1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 275574442305144922
-    second: potion-4_0
+      213: 6188316926005112113
+    second: infentory_bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: potion-4_0
+      name: infentory_bg_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 123
-        height: 256
+        x: 1
+        y: 4
+        width: 556
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5846c6ce7903d300800000000000000
-      internalID: 275574442305144922
+      spriteID: 13d6214057151e550800000000000000
+      internalID: 6188316926005112113
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      potion-4_0: 275574442305144922
+      infentory_bg_0: 6188316926005112113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
