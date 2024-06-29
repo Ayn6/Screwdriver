@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee0d0ba3258dee0439ea6ff2c8a434a2, type: 3}
-  m_Name: Clover
+  m_Name: Alohotsi
   m_EditorClassIdentifier: 
-  ingridient: {fileID: 11400000, guid: fe6f4e96944758641b04de7579efc7da, type: 2}
-  count: 83
+  ingridient: {fileID: 11400000, guid: 8357c742ae04a5c4d963d208b86b64fc, type: 2}
+  count: 100

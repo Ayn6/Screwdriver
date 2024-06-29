@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0d0ba3258dee0439ea6ff2c8a434a2, type: 3}
-  m_Name: Clover
+  m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
+  m_Name: POint
   m_EditorClassIdentifier: 
-  ingridient: {fileID: 11400000, guid: fe6f4e96944758641b04de7579efc7da, type: 2}
-  count: 83
+  count: 0
+  Name: 
+  sprite: {fileID: 0}
+  ctegory: 0
