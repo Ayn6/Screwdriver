@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   Name: "\u0427\u0438\u0445\u043E\u0442\u043D\u0438\u0446\u0430"
-  sprite: {fileID: 21300000, guid: f739bfbc4675c7b4db4623778f8b0c24, type: 3}
-  ctegory: 1
+  sprite: {fileID: 21300000, guid: 9007c5f6b1bddb84e8ef70e0a2e547eb, type: 3}
+  ready: {fileID: 21300000, guid: 9007c5f6b1bddb84e8ef70e0a2e547eb, type: 3}
+  ctegory: 2
