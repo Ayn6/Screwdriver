@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0d0ba3258dee0439ea6ff2c8a434a2, type: 3}
   m_Name: LovePotion
   m_EditorClassIdentifier: 
-  ingridient: {fileID: 11400000, guid: cecf9f06d7d34694cbfd9b386fd09a31, type: 2}
+  ingridient: {fileID: 11400000, guid: 321da3eabcb0b96449279469e5bb39b5, type: 2}
   count: 4

@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87367d7ac172b849bc37807f3249278, type: 3}
   m_Name: LovePotion
   m_EditorClassIdentifier: 
-  name: "\u0417\u0435\u043B\u044C\u0435 \u043B\u044E\u0431\u0432\u0438"
   first: {fileID: 11400000, guid: 7263c4374aae0a744ab247365f2e98e6, type: 2}
   second: {fileID: 11400000, guid: 8357c742ae04a5c4d963d208b86b64fc, type: 2}
-  third: {fileID: 0}
-  ready: {fileID: 11400000, guid: cecf9f06d7d34694cbfd9b386fd09a31, type: 2}
-  sprite: {fileID: 3643112233251165920, guid: 675f4daf40a73004cb19fc7ad54c1374, type: 3}
-  open: 1
+  third: {fileID: 11400000, guid: fe6f4e96944758641b04de7579efc7da, type: 2}
+  ready: {fileID: 11400000, guid: 321da3eabcb0b96449279469e5bb39b5, type: 2}
+  sprite: {fileID: 21300000, guid: db1bb81cbdcd7944fbd6566625013d09, type: 3}
