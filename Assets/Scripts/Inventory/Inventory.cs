@@ -1,30 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
     public List<Item> inventory = new List<Item>();
 
-    public bool UseItem(Item itemName)
+    public bool IsEnoughtItem(List<Item> required)
     {
-        foreach (Item item in inventory)
+        // Создаем словарь для подсчета требуемых предметов
+        Dictionary<string, int> requiredItems = new Dictionary<string, int>();
+        foreach (var item in required)
         {
-            if (item == itemName)
+            if (requiredItems.ContainsKey(item.ingridient.name))
             {
-                if (item.count > 0)
+                requiredItems[item.ingridient.name] += item.count;
+            }
+            else
+            {
+                requiredItems[item.ingridient.name] = item.count;
+            }
+        }
+
+        // Проверяем наличие требуемых предметов в инвентаре
+        foreach (var kvp in requiredItems)
+        {
+            int availableCount = inventory.Where(i => i.ingridient.name == kvp.Key).Sum(i => i.count);
+            if (availableCount < kvp.Value)
+            {
+                return false; // Не хватает предметов
+            }
+        }
+
+        return true; // Достаточно предметов
+    }
+
+    public bool RemoveItem(string name, int count)
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].ingridient.name == name)
+            {
+                if (inventory[i].count < count)
                 {
-                    item.count--;
+                    return false;
+                }
+                if (inventory[i].count == count)
+                {
+                    inventory.RemoveAt(i);
                     return true;
                 }
                 else
                 {
-                    Debug.Log("No more items left: " + itemName);
-                    return false;
+                    inventory[i].count -= count;
+                    return true;
                 }
             }
         }
-        Debug.Log("Item not found: " + itemName);
         return false;
     }
+
 }

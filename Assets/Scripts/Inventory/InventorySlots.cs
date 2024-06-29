@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class InventorySlots : MonoBehaviour
 {
-    [SerializeField] private Inventory playerInventory;
+    public Inventory playerInventory;
     private List<InventorySlot> slots = new List<InventorySlot>();
-    private bool click;
 
     private void Start()
     {
@@ -35,26 +34,4 @@ public class InventorySlots : MonoBehaviour
 
     }
 
-    private int index; // ќбъ€вл€ем переменную уровн€ класса
-
-    public void GetIndex(GameObject obj)
-    {
-        index = obj.transform.GetSiblingIndex();
-        Debug.Log(index); // Ћогируем значение индекса
-    }
-
-    public void Delet()
-    {
-        Debug.Log(index);
-        // ”бедитесь, что индекс установлен до вызова этого метода
-        if (playerInventory.inventory[index].count <= 0)
-        {
-            return;
-        }
-        else
-        {
-            playerInventory.inventory[index].count--;
-            Restart();
-        }
-    }
 }

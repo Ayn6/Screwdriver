@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
   m_Name: Alihotsy
   m_EditorClassIdentifier: 
-  count: 0
+  count: 1
   Name: "\u0410\u043B\u0438\u0445\u043E\u0446\u0438\u0439"
   sprite: {fileID: 21300000, guid: 99844c35ad30a4f4f89d94080dca07b3, type: 3}
-  ctegory: 1
+  ready: {fileID: 21300000, guid: 0c7bfa058d398a54fb583cd32d80c44f, type: 3}
+  ctegory: 2

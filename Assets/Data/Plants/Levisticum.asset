@@ -15,4 +15,5 @@ MonoBehaviour:
   count: 0
   Name: "\u041B\u044E\u0431\u0438\u0441\u0442\u043E\u043A"
   sprite: {fileID: 21300000, guid: 35784d23764cf704da0ccac593f9e868, type: 3}
+  ready: {fileID: 21300000, guid: 7df629e8a47f80b4e9bed40035aa9397, type: 3}
   ctegory: 1

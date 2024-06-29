@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
   m_Name: Clover
   m_EditorClassIdentifier: 
-  count: 0
-  Name: 
-  sprite: {fileID: -7755311243060046091, guid: db6dcef9ead8b6d44b4a0c31734382dc, type: 3}
+  count: 6
+  Name: "\u041A\u043B\u0435\u0432\u0435\u0440"
+  sprite: {fileID: -7755311243060046091, guid: e720cb7b88010d6438458e870b7d3caf, type: 3}
+  ready: {fileID: 21300000, guid: 3da4a13467158d9428264d1f5478cb34, type: 3}
   ctegory: 1

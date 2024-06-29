@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraRoation : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Скорость движения
+    public float moveSpeed = 500f; // Скорость движения
 
     private Vector2 minBounds;
     private Vector2 maxBounds;
