@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
-  m_Name: Clover
+  m_Name: Hemlock
   m_EditorClassIdentifier: 
   count: 0
-  Name: 
-  sprite: {fileID: -7755311243060046091, guid: db6dcef9ead8b6d44b4a0c31734382dc, type: 3}
+  Name: "\u0411\u043E\u043B\u0438\u0433\u043E\u043B\u043E\u0432"
+  sprite: {fileID: 21300000, guid: 2df32961ac8a2f74498c876c44472f48, type: 3}
   ctegory: 1
