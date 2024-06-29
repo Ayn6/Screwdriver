@@ -12,7 +12,7 @@ public class InventorySlot : MonoBehaviour
 
     public void FillSlot(Item item)
     {
-        if (item == null || (item != null && item.count < 0))
+        if (item == null || (item != null && item.count <= 0))
         {
             count.text = "";
             imageItem.sprite = empty;

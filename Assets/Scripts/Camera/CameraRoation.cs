@@ -1,36 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraRoation : MonoBehaviour
 {
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 5f; // Скорость движения
 
-    private float minX; // Минимальное значение по оси X (левая граница фона)
-    private float maxX; // Максимальное значение по оси X (правая граница фона)
-
-    [SerializeField] private Collider2D left;
-    [SerializeField] private Collider2D right;
+    private Vector2 minBounds;
+    private Vector2 maxBounds;
+    private float objectWidth;
+    private float objectHeight;
+    private RectTransform rectTransform;
 
     void Start()
     {
-            minX = left.transform.position.x;
-            maxX = right.transform.position.x;
+        rectTransform = GetComponent<RectTransform>();
+        objectWidth = rectTransform.rect.width / 4;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        // Получаем ввод с клавиатуры
+        float moveHorizontal = Input.GetAxis("Horizontal");
 
-        // Вычисляем новое положение камеры
-        Vector3 movement = new Vector3(horizontal, 0, 0) * moveSpeed * Time.deltaTime;
-        Vector3 newPosition = transform.position + movement;
+        // Определяем направление движения
+        Vector2 movement = new Vector2(moveHorizontal, 0);
 
-        // Ограничиваем положение камеры по оси X
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
+        // Перемещаем объект
+        rectTransform.anchoredPosition += -movement * moveSpeed * Time.deltaTime;
 
-        // Устанавливаем новое положение камеры
-        transform.position = newPosition;
+        // Ограничиваем движение в пределах границ
+        Vector2 newPosition = rectTransform.anchoredPosition;
+        newPosition.x = Mathf.Clamp(newPosition.x, -objectWidth, objectWidth);
+
+        rectTransform.anchoredPosition = newPosition;
     }
 }
     
