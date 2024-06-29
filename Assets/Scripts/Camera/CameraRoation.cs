@@ -5,20 +5,10 @@ using UnityEngine;
 public class CameraRoation : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public float minX = -10.0f; // ћинимальное значение по оси X
+    public float maxX = 10.0f;  // ћаксимальное значение по оси X
 
-    private float minX; // ћинимальное значение по оси X (лева€ граница фона)
-    private float maxX; // ћаксимальное значение по оси X (права€ граница фона)
-
-    [SerializeField] private Collider2D left;
-    [SerializeField] private Collider2D right;
-
-    void Start()
-    {
-            minX = left.transform.position.x;
-            maxX = right.transform.position.x;
-    }
-
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
 
