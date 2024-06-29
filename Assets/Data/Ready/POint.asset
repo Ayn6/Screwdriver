@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: POint
   m_EditorClassIdentifier: 
   count: 0
-  Name: 
-  sprite: {fileID: 0}
-  ctegory: 0
+  Name: Love
+  sprite: {fileID: -3021197057994589607, guid: 2360b6862aec242419b01eb02c5ab4e9, type: 3}
+  ctegory: 2

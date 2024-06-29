@@ -15,7 +15,6 @@ public class Recept : MonoBehaviour
     {
         if (inventorySlots.item[0] == potion.first && inventorySlots.item[1] == potion.second && inventorySlots.item[2] == potion.third)
         {
-            Debug.Log(1);
             inventorySlots.item.Clear();
 
             item = new Item
