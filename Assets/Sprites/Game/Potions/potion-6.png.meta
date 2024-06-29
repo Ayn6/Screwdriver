@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 675f4daf40a73004cb19fc7ad54c1374
+guid: 16a5ce09b1371604e9374098df25ff65
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -167,7 +167,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      potion-6_0: 3643112233251165920
+      potion-6_1: 5906565568175747013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
