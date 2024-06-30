@@ -10,6 +10,8 @@ public class Ingridient : ScriptableObject
     public Sprite sprite;
     public Sprite ready;
     public int ctegory;
+    public float time;
+
 
     public bool open;
 }

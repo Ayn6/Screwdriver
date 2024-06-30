@@ -19,8 +19,18 @@ public class InventorySlot : MonoBehaviour
         }
         else if (item != null)
         {
-            count.text = "x" + item.count.ToString();
-            imageItem.sprite = item.ingridient.sprite;
+            if(item.status != 0)
+            {
+                Debug.Log(item.ingridient.ready);
+                count.text = "x" + item.count.ToString();
+                imageItem.sprite = item.ingridient.ready;
+            }
+            else
+            {
+                count.text = "x" + item.count.ToString();
+                imageItem.sprite = item.ingridient.sprite;
+            }
+
         }
     }
 }

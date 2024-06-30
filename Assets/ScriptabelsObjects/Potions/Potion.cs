@@ -11,4 +11,7 @@ public class Potion : ScriptableObject
     public Ingridient third;
     public Ingridient ready;
     public Sprite sprite;
+
+    public float timeToCook;
+    public float timeToReady;
 }
