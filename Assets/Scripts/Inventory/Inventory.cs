@@ -60,5 +60,36 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+    public bool IsAdded(Item item, int count = 1)
+    {
+        if (inventory.Count < 12)
+        {
+            // Увеличиваем количество только для предметов с таким же статусом
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if (item.ingridient == inventory[i].ingridient && inventory[i].count < 64 && inventory[i].status == item.status)
+                {
+                    inventory[i].count += count;
+                    return true;
+                }
+            }
 
+            // Найдем пустой слот в инвентаре
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if (inventory[i].ingridient == null)
+                {
+                    inventory[i] = item;
+                    inventory[i].count = count; // устанавливаем количество нового предмета
+                    return true;
+                }
+            }
+
+            // Если не нашли существующий предмет или пустой слот, добавляем новый предмет в конец списка
+            item.count = count; // устанавливаем количество нового предмета
+            inventory.Add(item);
+            return true;
+        }
+        return false;
+    }
 }

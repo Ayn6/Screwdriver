@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,10 @@ public class Recept : MonoBehaviour
     [SerializeField] private RectTransform scale;
     private Item item;
 
-    private bool isCoroutineRunning = false;
+    public List<Potion> items = new List<Potion>();
+
+    private bool isCoroutineRunning = false, click = false;
+    private int index = -1;
 
     private void FixedUpdate()
     {
@@ -65,5 +69,30 @@ public class Recept : MonoBehaviour
 
         isCoroutineRunning = false;
         Debug.Log("Coroutine ended.");
+    }
+
+    public void GetIndex(GameObject obj)
+    {
+        if (click)
+        {
+            if (index != obj.transform.GetSiblingIndex())
+            {
+                click = true;
+                potion = items[index];
+            }
+            else
+            {
+                index = -1;
+                click = false;
+                potion = null;
+            }
+
+        }
+        else
+        {
+            click = true;
+            index = obj.transform.GetSiblingIndex();
+            potion = items[index];
+        }
     }
 }
