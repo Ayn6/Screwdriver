@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87367d7ac172b849bc37807f3249278, type: 3}
   m_Name: SleepPotion
   m_EditorClassIdentifier: 
-  name: "\u0417\u0435\u043B\u044C\u0435 \u0441\u043D\u0430"
-  first: {fileID: 11400000, guid: 7263c4374aae0a744ab247365f2e98e6, type: 2}
-  second: {fileID: 11400000, guid: 8357c742ae04a5c4d963d208b86b64fc, type: 2}
-  third: {fileID: 0}
-  ready: {fileID: 11400000, guid: cecf9f06d7d34694cbfd9b386fd09a31, type: 2}
-  sprite: {fileID: 21300000, guid: 8fa93f89436341a44a73bdd5a62b730a, type: 3}
-  open: 1
+  ingridients:
+  - {fileID: 11400000, guid: b801bea5e050fe14381a13a0b731377d, type: 2}
+  - {fileID: 11400000, guid: 4fd53002b9cf0bc4fba92eed89d56075, type: 2}
+  - {fileID: 11400000, guid: fe2b1bd5b0528924b869e16e99f79060, type: 2}
+  ready: {fileID: 11400000, guid: bc217ab94024d6c41946eb42b80821bf, type: 2}
+  sprite: {fileID: 21300000, guid: f3318e4b7a063374fb4c314626310dd3, type: 3}
+  timeToCook: 100
+  timeToReady: 30

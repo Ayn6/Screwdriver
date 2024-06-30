@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
   m_Name: DeathPotion
   m_EditorClassIdentifier: 
-  count: 0
+  count: 1
   Name: "\u0417\u0435\u043B\u044C\u0435 \u0441\u043C\u0435\u0440\u0442\u0438"
-  sprite: {fileID: 21300000, guid: 56a88d20e27fb484aa9205115250c015, type: 3}
-  ready: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 4822dd5d779bd674ea273a4b8c5ef51d, type: 3}
+  ready: {fileID: 21300000, guid: 4822dd5d779bd674ea273a4b8c5ef51d, type: 3}
   ctegory: 3
-  open: 1
+  price: 100
+  time: 0

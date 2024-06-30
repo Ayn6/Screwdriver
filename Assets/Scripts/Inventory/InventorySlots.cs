@@ -16,6 +16,9 @@ public class InventorySlots : MonoBehaviour
 
     public void Restart()
     {
+        // Удаляем элементы инвентаря, у которых количество равно 0
+        playerInventory.inventory.RemoveAll(item => item.count == 0);
+
         slots = GetComponentsInChildren<InventorySlot>().ToList();
 
         for (int i = 0; i < slots.Count; i++)
@@ -31,7 +34,6 @@ public class InventorySlots : MonoBehaviour
                 slot.FillSlot(null);
             }
         }
-
     }
 
 }

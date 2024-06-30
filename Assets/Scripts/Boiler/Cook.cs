@@ -11,7 +11,7 @@ public class Cook : MonoBehaviour
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private InventorySlots inventorySlots;
 
-    public List<Ingridient> item = new List<Ingridient>();
+    public List<Item> item = new List<Item>();
     private bool click = false, action = false, pound = false;
     private int index = 0;
 
@@ -41,36 +41,35 @@ public class Cook : MonoBehaviour
 
     public void Put()
     {
-        if (playerInventory.inventory[index].count <= 0 || index == -1)
+        if (playerInventory.inventory[index].count <= 0 || (index == 0 && !click))
         {
             return;
         }
         else
         {
-            // Проверяем, есть ли уже такой элемент в коллекции item
-            bool found = false;
-            foreach (var existingItem in item)
-            {
-                if (existingItem.Equals(playerInventory.inventory[index].ingridient))
+            if(playerInventory.inventory[index].status != 0)
+            {                
+                Item newItem = new Item
                 {
-                    // Если элемент уже есть, увеличиваем его количество на 1
-                    existingItem.count++;
-                    found = true;
-                    break;
-                }
-            }
-
-            // Если элемент не найден, добавляем его в коллекцию item
-            if (!found)
-            {
-                item.Add(playerInventory.inventory[index].ingridient);
-            }
+                    ingridient = playerInventory.inventory[index].ingridient,
+                    status = playerInventory.inventory[index].status,
+                    count = 1
+                };
+                item.Add(newItem);
 
             // Уменьшаем количество в инвентаре игрока и вызываем Restart()
             playerInventory.inventory[index].count--;
             inventorySlots.Restart();
+
+            }
+            else
+            {
+                Debug.Log("Неправильный ингридиет!");
+            }
+
         }
     }
+
     public void Action()
     {
         if (playerInventory.inventory[index].count <= 0 || (index == 0 && !click))
@@ -112,6 +111,7 @@ public class Cook : MonoBehaviour
                         Debug.LogWarning("Failed to add item to the inventory.");
                     }
                     pound = false;
+                    action = false;
                 }
                 else
                 {
@@ -126,7 +126,6 @@ public class Cook : MonoBehaviour
             {
                 if (pound)
                 {
-                    Debug.Log(1);
 
                     // Создаем новый предмет со статусом 1
                     Item itemToAdd = new Item
@@ -159,6 +158,7 @@ public class Cook : MonoBehaviour
                         Debug.LogWarning("Failed to add item to the inventory.");
                     }
                     pound = false;
+                    action = false;
                 }
                 else
                 {
@@ -170,13 +170,13 @@ public class Cook : MonoBehaviour
                 action = true;
                 playerInventory.inventory[index].count--;
                 inventorySlots.Restart();
-                StartCoroutine(Pound(playerInventory.inventory[index].ingridient.time));
+                StartCoroutine(Act(playerInventory.inventory[index].ingridient.time));
             }
         }
     }
     public void Pound()
     {
-        if(playerInventory.inventory[index].ingridient.ctegory == 1)
+        if(playerInventory.inventory[index].ingridient.ctegory == 1 && playerInventory.inventory[index].status == 0)
         {
             Action();
         }
@@ -200,10 +200,10 @@ public class Cook : MonoBehaviour
         }
     }
 
-    private IEnumerator Pound(float time)
+    private IEnumerator Act(float time)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(time);
         pound = true;
-        Debug.Log(pound);
+        Debug.Log("Готово");
     }
 }

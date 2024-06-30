@@ -5,7 +5,6 @@ using UnityEngine;
 public class CrateOrder : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countText;
-    [SerializeField] private Sprite empty;
 
     public void Create(Ingridient item, int count)
     {

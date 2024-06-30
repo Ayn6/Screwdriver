@@ -10,6 +10,8 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI count;
     [SerializeField] private Sprite empty;
 
+    private Item currentItem;
+
     public void FillSlot(Item item)
     {
         if (item == null || (item != null && item.count <= 0))
@@ -32,4 +34,5 @@ public class InventorySlot : MonoBehaviour
 
         }
     }
+
 }

@@ -12,8 +12,5 @@ public class Ingridient : ScriptableObject
     public int ctegory;
     public int price;
     public float time;
-
-
-    public bool open;
 }
 

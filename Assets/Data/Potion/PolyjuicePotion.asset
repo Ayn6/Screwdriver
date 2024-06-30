@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87367d7ac172b849bc37807f3249278, type: 3}
   m_Name: PolyjuicePotion
   m_EditorClassIdentifier: 
-  name: "\u041E\u0431\u043E\u0440\u043E\u0442\u043D\u043E\u0435 \u0437\u0435\u043B\u044C\u0435"
-  first: {fileID: 11400000, guid: 7263c4374aae0a744ab247365f2e98e6, type: 2}
-  second: {fileID: 11400000, guid: 8357c742ae04a5c4d963d208b86b64fc, type: 2}
-  third: {fileID: 0}
-  ready: {fileID: 11400000, guid: cecf9f06d7d34694cbfd9b386fd09a31, type: 2}
-  sprite: {fileID: 21300000, guid: 8fa93f89436341a44a73bdd5a62b730a, type: 3}
-  open: 1
+  ingridients:
+  - {fileID: 11400000, guid: 3615b9904cb5390488ffdec1fa660758, type: 2}
+  - {fileID: 11400000, guid: 8357c742ae04a5c4d963d208b86b64fc, type: 2}
+  ready: {fileID: 11400000, guid: 3558f175c8bdc154cb25c31f998be0f4, type: 2}
+  sprite: {fileID: 21300000, guid: 9f42639f1145001478a20110e3c71e9b, type: 3}
+  timeToCook: 100
+  timeToReady: 120

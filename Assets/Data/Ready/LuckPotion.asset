@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f29fc2926ab44b9d3e03070af64d3, type: 3}
   m_Name: LuckPotion
   m_EditorClassIdentifier: 
-  count: 0
+  count: 1
   Name: "\u0417\u0435\u043B\u044C\u0435 \u0443\u0434\u0430\u0447\u0438"
-  sprite: {fileID: 21300000, guid: 2360b6862aec242419b01eb02c5ab4e9, type: 3}
-  ready: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 79225e4268c26b64ba8d0a404ce9b844, type: 3}
+  ready: {fileID: 21300000, guid: 79225e4268c26b64ba8d0a404ce9b844, type: 3}
   ctegory: 3
-  open: 1
+  price: 150
+  time: 0

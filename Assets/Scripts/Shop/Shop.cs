@@ -17,10 +17,15 @@ public class Shop : MonoBehaviour
         Restart();
     }
 
+    private void FixedUpdate()
+    {
+        moneyText.text = "Золотников: " + Player.money.ToString();
+    }
+
     public void Restart()
     {
         slots = GetComponentsInChildren<ShopSlot>().ToList();
-        moneyText.text = "Золотников: " + Player.money.ToString();
+
         for (int i = 0; i < slots.Count; i++)
         {
             var slot = slots[i];
@@ -53,7 +58,6 @@ public class Shop : MonoBehaviour
             if (added)
             {
                 Player.money -= price;
-                moneyText.text = "Золотников: " + Player.money.ToString();
             }
             else
             {

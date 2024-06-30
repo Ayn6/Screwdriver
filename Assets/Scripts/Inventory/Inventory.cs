@@ -13,6 +13,11 @@ public class Inventory : MonoBehaviour
         Dictionary<string, int> requiredItems = new Dictionary<string, int>();
         foreach (var item in required)
         {
+            if (item?.ingridient?.name == null)
+            {
+                continue; // Пропускаем предметы с неинициализированными полями
+            }
+
             if (requiredItems.ContainsKey(item.ingridient.name))
             {
                 requiredItems[item.ingridient.name] += item.count;
@@ -26,7 +31,10 @@ public class Inventory : MonoBehaviour
         // Проверяем наличие требуемых предметов в инвентаре
         foreach (var kvp in requiredItems)
         {
-            int availableCount = inventory.Where(i => i.ingridient.name == kvp.Key).Sum(i => i.count);
+            int availableCount = inventory
+                .Where(i => i?.ingridient?.name == kvp.Key)
+                .Sum(i => i?.count ?? 0);
+
             if (availableCount < kvp.Value)
             {
                 return false; // Не хватает предметов
@@ -35,6 +43,7 @@ public class Inventory : MonoBehaviour
 
         return true; // Достаточно предметов
     }
+
 
     public bool RemoveItem(string name, int count)
     {

@@ -17,3 +17,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 5b49274b910032f41bf29e993948744d, type: 3}
   ready: {fileID: 21300000, guid: 53e3a06921c02924683befcc8127ee2d, type: 3}
   ctegory: 1
+  price: 30
+  time: 30

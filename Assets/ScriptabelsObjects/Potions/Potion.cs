@@ -6,9 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Potion")]
 public class Potion : ScriptableObject
 {
-    public Ingridient first;
-    public Ingridient second;
-    public Ingridient third;
+    public List<Ingridient> ingridients = new List<Ingridient>();
+
     public Ingridient ready;
     public Sprite sprite;
 

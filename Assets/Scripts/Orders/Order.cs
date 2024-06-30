@@ -23,7 +23,10 @@ public class Order : MonoBehaviour
         // Очищаем слоты
         foreach (var slot in GetComponentsInChildren<CrateOrder>())
         {
-            slot.Clear();
+            if (slot != null) // Проверка на null
+            {
+                slot.Clear();
+            }
         }
 
         orders.Clear();
@@ -32,7 +35,7 @@ public class Order : MonoBehaviour
         slotsOrders = GetComponentsInChildren<CrateOrder>().ToList();
 
         Dictionary<Item, bool> usedItem = new Dictionary<Item, bool>();
-        List<Item> availableItems = items.Where(item => item.ingridient.open && item.ingridient.ctegory == 3).ToList();
+        List<Item> availableItems = items.Where(item => item.ingridient != null && item.ingridient.ctegory == 3).ToList();
 
         if (availableItems.Count == 0)
         {
@@ -57,9 +60,12 @@ public class Order : MonoBehaviour
             usedItem.Add(select, true);
             int count = Random.Range(1, 5);
 
-            slot.Create(select.ingridient, count);
-            orders.Add(select);
-            countItem.Add(count);
+            if (slot != null && select.ingridient != null) // Проверка на null
+            {
+                slot.Create(select.ingridient, count);
+                orders.Add(select);
+                countItem.Add(count);
+            }
         }
 
         if (orders.Count == 0 || countItem.Count == 0)
@@ -69,10 +75,12 @@ public class Order : MonoBehaviour
         }
     }
 
-        public void CompleteOrder()
+
+    public void CompleteOrder()
     {
         slotsOrders = GetComponentsInChildren<CrateOrder>().ToList();
         bool enoughItems = playerInvetory.IsEnoughtItem(orders);
+        int money = 0;
 
         if (enoughItems)
         {
@@ -80,7 +88,7 @@ public class Order : MonoBehaviour
             {
                 Item order = orders[i];
                 int requiredCount = countItem[i];
-
+                money += order.ingridient.price * requiredCount;
                 bool action = playerInvetory.RemoveItem(order.ingridient.name, requiredCount);
                 if (!action)
                 {
@@ -88,8 +96,8 @@ public class Order : MonoBehaviour
                     break;
                 }
             }
-
-            // После успешного удаления всех элементов обновляем заказы
+            
+            Player.money += money;
             UpdateOrder();
         }
         else
