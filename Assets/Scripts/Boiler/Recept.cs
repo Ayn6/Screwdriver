@@ -10,6 +10,7 @@ public class Recept : MonoBehaviour
     [SerializeField] private Potion potion;
     [SerializeField] private Cook inventorySlots;
     [SerializeField] private Inventory playerInventory;
+    [SerializeField] private Animator animator;
 
     private Item item;
 
@@ -48,6 +49,7 @@ public class Recept : MonoBehaviour
             else
             {
                 StartCoroutine(Create(potion.timeToReady));
+                animator.SetBool("Cook", true);
             }
         }
     }
@@ -88,5 +90,6 @@ public class Recept : MonoBehaviour
         inventorySlots.item.Clear();
         playerInventory.IsAdded(item);
         Debug.Log("Готово");
+        animator.SetBool("Cook", false);
     }
 }

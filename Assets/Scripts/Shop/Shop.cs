@@ -14,6 +14,7 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        Player.money = 250;
         Restart();
     }
 

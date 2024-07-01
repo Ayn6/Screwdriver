@@ -1,15 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 
 public class Cook : MonoBehaviour
 {
-
     [SerializeField] private Inventory playerInventory;
     [SerializeField] private InventorySlots inventorySlots;
+    [SerializeField] private Animator animD;
+    [SerializeField] private Animator animM;
 
     public List<Item> item = new List<Item>();
     private bool click = false, action = false, pound = false;
@@ -70,7 +68,7 @@ public class Cook : MonoBehaviour
         }
     }
 
-    public void Action()
+    public void Action(Animator animator = null)
     {
         if (playerInventory.inventory[index].count <= 0 || (index == 0 && !click))
         {
@@ -170,7 +168,7 @@ public class Cook : MonoBehaviour
                 action = true;
                 playerInventory.inventory[index].count--;
                 inventorySlots.Restart();
-                StartCoroutine(Act(playerInventory.inventory[index].ingridient.time));
+                StartCoroutine(Act(playerInventory.inventory[index].ingridient.time, animator));
             }
         }
     }
@@ -178,11 +176,11 @@ public class Cook : MonoBehaviour
     {
         if(playerInventory.inventory[index].ingridient.ctegory == 1 && playerInventory.inventory[index].status == 0)
         {
-            Action();
+            Action(animM);
         }
         else
         {
-            Debug.Log("Вы не можете сушить это растение");
+            Debug.Log("Вы не можете толоч это растение");
             return ;
         }
     }
@@ -191,19 +189,25 @@ public class Cook : MonoBehaviour
     {
         if (playerInventory.inventory[index].ingridient.ctegory == 2)
         {
-            Action();
+            Action(animD);
         }
         else
         {
-            Debug.Log("Вы не можете толоч это растение");
+            Debug.Log("Вы не можете сушить это растение");
             return;
         }
     }
 
-    private IEnumerator Act(float time)
+    private IEnumerator Act(float time, Animator anim = null)
     {
+        if (anim != null)
+            anim.SetBool("Cook", true);
+
         yield return new WaitForSeconds(time);
         pound = true;
         Debug.Log("Готово");
+
+        if (anim != null)
+            anim.SetBool("Cook", false);
     }
 }
